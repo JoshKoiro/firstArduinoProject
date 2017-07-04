@@ -7,7 +7,11 @@ const board = new five.Board()
 //import weather API module
 const weather = require('./weather.js');
 
+const pinOne = 6
 
+const pinTwo = 5
+
+const pinThree = 3
 
 //Command line object
 const commands = {
@@ -21,7 +25,8 @@ let runtime = () => {
   board.repl.inject(commands)
   }
   //INSERT CODE BELOW
-
+  const rgb = new five.LedRGB([pinOne,pinTwo,pinThree])
+  rgb.intensity(100)
 }
 
 //Initialization function

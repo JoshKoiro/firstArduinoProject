@@ -31,7 +31,8 @@ let findWeather = (searchTerm) => {
   result.forEach((e,i) => {
     console.log("------------------");
     console.log("Location " + i + ": " + e.location.name);
-    console.log("Time: " + e.current.observationtime);
+    console.log("Status: " + e.current.skytext);
+    console.log("Updated: " + e.current.observationtime);
     console.log("Temperature: " + e.current.temperature);
     console.log("Humidity: " + e.current.humidity);
   })
