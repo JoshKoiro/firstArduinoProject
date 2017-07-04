@@ -27,7 +27,9 @@ let findWeather = (searchTerm) => {
     if(err) console.log(err);
 
   //print results to console (ref ApiRef.txt for data structure)
+  console.log("\r\nResults: " + result.length);
   result.forEach((e,i) => {
+    console.log("------------------");
     console.log("Location " + i + ": " + e.location.name);
     console.log("Time: " + e.current.observationtime);
     console.log("Temperature: " + e.current.temperature);
