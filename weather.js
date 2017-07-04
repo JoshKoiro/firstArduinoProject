@@ -7,13 +7,17 @@ const rl = readline.createInterface({
   output: process.stdout
 })
 
-//Exectute CLI prompt
-rl.question('Enter city, location, or zip code ', (searchTerm) => {
+//wrapper function for CLI prompt
+let init = () => {
 
-  //Get weather Data
-  findWeather(searchTerm)
-  rl.close();
-});
+  //Exectute CLI prompt
+  rl.question('Enter city, location, or zip code ', (searchTerm) => {
+
+    //Get weather Data
+    findWeather(searchTerm)
+    rl.close();
+  });
+}
 
 //wrapper function for weather.find() method
 let findWeather = (searchTerm) => {
@@ -33,3 +37,10 @@ let findWeather = (searchTerm) => {
   });
 
 }
+
+//acual function declaration
+init()
+
+//node js export function (import file with require("./weather.js") and call function with .init() method)
+var exports = module.exports;
+exports.init = init;
